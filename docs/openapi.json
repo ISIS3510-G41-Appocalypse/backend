@@ -1,0 +1,3148 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "",
+        "title": "standard public schema",
+        "version": "14.4"
+    },
+    "host": "cpayradzzfpyypefkvjg.supabase.co:443",
+    "basePath": "/",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json",
+        "application/vnd.pgrst.object+json;nulls=stripped",
+        "application/vnd.pgrst.object+json",
+        "text/csv"
+    ],
+    "produces": [
+        "application/json",
+        "application/vnd.pgrst.object+json;nulls=stripped",
+        "application/vnd.pgrst.object+json",
+        "text/csv"
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "produces": [
+                    "application/openapi+json",
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "summary": "OpenAPI description (this document)",
+                "tags": [
+                    "Introspection"
+                ]
+            }
+        },
+        "/rates_rider": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.rider_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.driver_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.punctuality"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.behavior"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.communication"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.payment_punctuality"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.ride_id"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/rates_rider"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "rates_rider"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.rates_rider"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "rates_rider"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.rider_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.driver_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.punctuality"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.behavior"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.communication"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.payment_punctuality"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.ride_id"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "rates_rider"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.rider_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.driver_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.punctuality"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.behavior"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.communication"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.payment_punctuality"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_rider.ride_id"
+                    },
+                    {
+                        "$ref": "#/parameters/body.rates_rider"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "rates_rider"
+                ]
+            }
+        },
+        "/payments": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.payments.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payments.reservation_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payments.amount"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payments.payment_method_id"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/payments"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "payments"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.payments"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "payments"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.payments.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payments.reservation_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payments.amount"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payments.payment_method_id"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "payments"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.payments.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payments.reservation_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payments.amount"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payments.payment_method_id"
+                    },
+                    {
+                        "$ref": "#/parameters/body.payments"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "payments"
+                ]
+            }
+        },
+        "/vehicles": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.brand"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.model"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.color"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.license_plate"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.number_slots"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.driver_id"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/vehicles"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "vehicles"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.vehicles"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "vehicles"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.brand"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.model"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.color"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.license_plate"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.number_slots"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.driver_id"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "vehicles"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.brand"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.model"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.color"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.license_plate"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.number_slots"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.vehicles.driver_id"
+                    },
+                    {
+                        "$ref": "#/parameters/body.vehicles"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "vehicles"
+                ]
+            }
+        },
+        "/reservation_cancellations": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.reservation_cancellations.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservation_cancellations.reservation_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservation_cancellations.reason"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservation_cancellations.canceled_by"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/reservation_cancellations"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "reservation_cancellations"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.reservation_cancellations"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "reservation_cancellations"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.reservation_cancellations.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservation_cancellations.reservation_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservation_cancellations.reason"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservation_cancellations.canceled_by"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "reservation_cancellations"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.reservation_cancellations.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservation_cancellations.reservation_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservation_cancellations.reason"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservation_cancellations.canceled_by"
+                    },
+                    {
+                        "$ref": "#/parameters/body.reservation_cancellations"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "reservation_cancellations"
+                ]
+            }
+        },
+        "/payment_methods": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_methods.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_methods.driver_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_methods.type"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_methods.number_account"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/payment_methods"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "payment_methods"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.payment_methods"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "payment_methods"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_methods.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_methods.driver_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_methods.type"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_methods.number_account"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "payment_methods"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_methods.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_methods.driver_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_methods.type"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.payment_methods.number_account"
+                    },
+                    {
+                        "$ref": "#/parameters/body.payment_methods"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "payment_methods"
+                ]
+            }
+        },
+        "/rates_driver": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.rider_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.driver_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.punctuality"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.behavior"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.communication"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.security"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.ride_id"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/rates_driver"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "rates_driver"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.rates_driver"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "rates_driver"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.rider_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.driver_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.punctuality"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.behavior"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.communication"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.security"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.ride_id"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "rates_driver"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.rider_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.driver_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.punctuality"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.behavior"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.communication"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.security"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rates_driver.ride_id"
+                    },
+                    {
+                        "$ref": "#/parameters/body.rates_driver"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "rates_driver"
+                ]
+            }
+        },
+        "/drivers": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.drivers.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.drivers.cancellation_odds"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.drivers.rating"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.drivers.user_id"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/drivers"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "drivers"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.drivers"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "drivers"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.drivers.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.drivers.cancellation_odds"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.drivers.rating"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.drivers.user_id"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "drivers"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.drivers.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.drivers.cancellation_odds"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.drivers.rating"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.drivers.user_id"
+                    },
+                    {
+                        "$ref": "#/parameters/body.drivers"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "drivers"
+                ]
+            }
+        },
+        "/riders": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.riders.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.riders.cancellation_odds"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.riders.rating"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.riders.user_id"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/riders"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "riders"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.riders"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "riders"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.riders.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.riders.cancellation_odds"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.riders.rating"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.riders.user_id"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "riders"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.riders.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.riders.cancellation_odds"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.riders.rating"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.riders.user_id"
+                    },
+                    {
+                        "$ref": "#/parameters/body.riders"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "riders"
+                ]
+            }
+        },
+        "/zones": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.zones.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.zones.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.zones.description"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/zones"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "zones"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.zones"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "zones"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.zones.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.zones.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.zones.description"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "zones"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.zones.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.zones.name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.zones.description"
+                    },
+                    {
+                        "$ref": "#/parameters/body.zones"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "zones"
+                ]
+            }
+        },
+        "/reservations": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.ride_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.rider_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.meeting_point"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.state"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.on_time_rider"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.on_time_driver"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.destination_point"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/reservations"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "reservations"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.reservations"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "reservations"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.ride_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.rider_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.meeting_point"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.state"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.on_time_rider"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.on_time_driver"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.destination_point"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "reservations"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.ride_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.rider_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.meeting_point"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.state"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.on_time_rider"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.on_time_driver"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.reservations.destination_point"
+                    },
+                    {
+                        "$ref": "#/parameters/body.reservations"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "reservations"
+                ]
+            }
+        },
+        "/ride_cancellations": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.ride_cancellations.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ride_cancellations.ride_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ride_cancellations.reason"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ride_cancellations.canceled_by"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/ride_cancellations"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "ride_cancellations"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.ride_cancellations"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "ride_cancellations"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.ride_cancellations.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ride_cancellations.ride_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ride_cancellations.reason"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ride_cancellations.canceled_by"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "ride_cancellations"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.ride_cancellations.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ride_cancellations.ride_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ride_cancellations.reason"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.ride_cancellations.canceled_by"
+                    },
+                    {
+                        "$ref": "#/parameters/body.ride_cancellations"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "ride_cancellations"
+                ]
+            }
+        },
+        "/rides": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.driver_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.vehicle_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.zone_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.source"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.destination"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.date"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.departure_time"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.state"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.type"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/rides"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "rides"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.rides"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "rides"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.driver_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.vehicle_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.zone_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.source"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.destination"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.date"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.departure_time"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.state"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.type"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "rides"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.driver_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.vehicle_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.zone_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.source"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.destination"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.date"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.departure_time"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.state"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.rides.type"
+                    },
+                    {
+                        "$ref": "#/parameters/body.rides"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "rides"
+                ]
+            }
+        },
+        "/users": {
+            "get": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.users.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.first_name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.last_name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.email"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.password"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.zone_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.auth_id"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/order"
+                    },
+                    {
+                        "$ref": "#/parameters/range"
+                    },
+                    {
+                        "$ref": "#/parameters/rangeUnit"
+                    },
+                    {
+                        "$ref": "#/parameters/offset"
+                    },
+                    {
+                        "$ref": "#/parameters/limit"
+                    },
+                    {
+                        "$ref": "#/parameters/preferCount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "items": {
+                                "$ref": "#/definitions/users"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "206": {
+                        "description": "Partial Content"
+                    }
+                },
+                "tags": [
+                    "users"
+                ]
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/body.users"
+                    },
+                    {
+                        "$ref": "#/parameters/select"
+                    },
+                    {
+                        "$ref": "#/parameters/preferPost"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                },
+                "tags": [
+                    "users"
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.users.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.first_name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.last_name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.email"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.password"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.zone_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.auth_id"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "users"
+                ]
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/rowFilter.users.id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.first_name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.last_name"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.email"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.password"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.zone_id"
+                    },
+                    {
+                        "$ref": "#/parameters/rowFilter.users.auth_id"
+                    },
+                    {
+                        "$ref": "#/parameters/body.users"
+                    },
+                    {
+                        "$ref": "#/parameters/preferReturn"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "tags": [
+                    "users"
+                ]
+            }
+        }
+    },
+    "definitions": {
+        "rates_rider": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "rider_id": {
+                    "description": "Note:\nThis is a Foreign Key to `riders.id`.<fk table='riders' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "driver_id": {
+                    "description": "Note:\nThis is a Foreign Key to `drivers.id`.<fk table='drivers' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "punctuality": {
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "behavior": {
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "communication": {
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "payment_punctuality": {
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "ride_id": {
+                    "description": "Note:\nThis is a Foreign Key to `rides.id`.<fk table='rides' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "payments": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "reservation_id": {
+                    "description": "Note:\nThis is a Foreign Key to `reservations.id`.<fk table='reservations' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "amount": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "payment_method_id": {
+                    "description": "Note:\nThis is a Foreign Key to `payment_methods.id`.<fk table='payment_methods' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "vehicles": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "brand": {
+                    "format": "text",
+                    "type": "string"
+                },
+                "model": {
+                    "format": "text",
+                    "type": "string"
+                },
+                "color": {
+                    "format": "text",
+                    "type": "string"
+                },
+                "license_plate": {
+                    "format": "text",
+                    "type": "string"
+                },
+                "number_slots": {
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "driver_id": {
+                    "description": "Note:\nThis is a Foreign Key to `drivers.id`.<fk table='drivers' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "reservation_cancellations": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "reservation_id": {
+                    "description": "Note:\nThis is a Foreign Key to `reservations.id`.<fk table='reservations' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "reason": {
+                    "enum": [
+                        "LIBERAR_CUPO",
+                        "CONDUCTOR_INPUNTUAL",
+                        "PASAJERO_INPUNTUAL",
+                        "VIAJE_CERRADO",
+                        "INCUMPLIMIENTO_CONDUCTOR",
+                        "INCUMPLIMIENTO_PASAJERO",
+                        "RESERVA_CERRADA"
+                    ],
+                    "format": "public.cancellation_reason",
+                    "type": "string"
+                },
+                "canceled_by": {
+                    "enum": [
+                        "DRIVER",
+                        "RIDER"
+                    ],
+                    "format": "public.cancellation_role",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "payment_methods": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "driver_id": {
+                    "description": "Note:\nThis is a Foreign Key to `drivers.id`.<fk table='drivers' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "type": {
+                    "enum": [
+                        "CASH"
+                    ],
+                    "format": "public.payment_type",
+                    "type": "string"
+                },
+                "number_account": {
+                    "format": "text",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "rates_driver": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "rider_id": {
+                    "description": "Note:\nThis is a Foreign Key to `riders.id`.<fk table='riders' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "driver_id": {
+                    "description": "Note:\nThis is a Foreign Key to `drivers.id`.<fk table='drivers' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "punctuality": {
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "behavior": {
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "communication": {
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "security": {
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "ride_id": {
+                    "description": "Note:\nThis is a Foreign Key to `rides.id`.<fk table='rides' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "drivers": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "cancellation_odds": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "rating": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "user_id": {
+                    "description": "Note:\nThis is a Foreign Key to `users.id`.<fk table='users' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "riders": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "cancellation_odds": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "rating": {
+                    "format": "numeric",
+                    "type": "number"
+                },
+                "user_id": {
+                    "description": "Note:\nThis is a Foreign Key to `users.id`.<fk table='users' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "zones": {
+            "required": [
+                "id",
+                "name",
+                "description"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "name": {
+                    "format": "text",
+                    "type": "string"
+                },
+                "description": {
+                    "format": "text",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "reservations": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "ride_id": {
+                    "description": "Note:\nThis is a Foreign Key to `rides.id`.<fk table='rides' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "rider_id": {
+                    "description": "Note:\nThis is a Foreign Key to `riders.id`.<fk table='riders' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "meeting_point": {
+                    "format": "text",
+                    "type": "string"
+                },
+                "state": {
+                    "enum": [
+                        "PENDIENTE",
+                        "ACEPTADA",
+                        "EN_CURSO",
+                        "FINALIZADA",
+                        "RECHAZADA",
+                        "CANCELADA"
+                    ],
+                    "format": "public.reservation_state",
+                    "type": "string"
+                },
+                "on_time_rider": {
+                    "format": "boolean",
+                    "type": "boolean"
+                },
+                "on_time_driver": {
+                    "format": "boolean",
+                    "type": "boolean"
+                },
+                "destination_point": {
+                    "format": "text",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ride_cancellations": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "ride_id": {
+                    "description": "Note:\nThis is a Foreign Key to `rides.id`.<fk table='rides' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "reason": {
+                    "enum": [
+                        "LIBERAR_CUPO",
+                        "CONDUCTOR_INPUNTUAL",
+                        "PASAJERO_INPUNTUAL",
+                        "VIAJE_CERRADO",
+                        "INCUMPLIMIENTO_CONDUCTOR",
+                        "INCUMPLIMIENTO_PASAJERO",
+                        "RESERVA_CERRADA"
+                    ],
+                    "format": "public.cancellation_reason",
+                    "type": "string"
+                },
+                "canceled_by": {
+                    "enum": [
+                        "DRIVER",
+                        "RIDER"
+                    ],
+                    "format": "public.cancellation_role",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "rides": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "driver_id": {
+                    "description": "Note:\nThis is a Foreign Key to `drivers.id`.<fk table='drivers' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "vehicle_id": {
+                    "description": "Note:\nThis is a Foreign Key to `vehicles.id`.<fk table='vehicles' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "zone_id": {
+                    "description": "Note:\nThis is a Foreign Key to `zones.id`.<fk table='zones' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "source": {
+                    "format": "text",
+                    "type": "string"
+                },
+                "destination": {
+                    "format": "text",
+                    "type": "string"
+                },
+                "date": {
+                    "format": "date",
+                    "type": "string"
+                },
+                "departure_time": {
+                    "format": "time without time zone",
+                    "type": "string"
+                },
+                "state": {
+                    "enum": [
+                        "OFERTADO",
+                        "EN_CURSO",
+                        "FINALIZADO",
+                        "COMPLETO",
+                        "CANCELADO"
+                    ],
+                    "format": "public.ride_state",
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "FROM_UNIVERSITY",
+                        "TO_UNIVERSITY"
+                    ],
+                    "format": "public.trip_type",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "users": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Note:\nThis is a Primary Key.<pk/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "first_name": {
+                    "format": "text",
+                    "type": "string"
+                },
+                "last_name": {
+                    "format": "text",
+                    "type": "string"
+                },
+                "email": {
+                    "format": "text",
+                    "type": "string"
+                },
+                "password": {
+                    "format": "text",
+                    "type": "string"
+                },
+                "zone_id": {
+                    "description": "Note:\nThis is a Foreign Key to `zones.id`.<fk table='zones' column='id'/>",
+                    "format": "integer",
+                    "type": "integer"
+                },
+                "auth_id": {
+                    "format": "uuid",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "parameters": {
+        "preferParams": {
+            "name": "Prefer",
+            "description": "Preference",
+            "required": false,
+            "in": "header",
+            "type": "string"
+        },
+        "preferReturn": {
+            "name": "Prefer",
+            "description": "Preference",
+            "required": false,
+            "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none"
+            ],
+            "in": "header",
+            "type": "string"
+        },
+        "preferCount": {
+            "name": "Prefer",
+            "description": "Preference",
+            "required": false,
+            "enum": [
+                "count=none"
+            ],
+            "in": "header",
+            "type": "string"
+        },
+        "preferPost": {
+            "name": "Prefer",
+            "description": "Preference",
+            "required": false,
+            "enum": [
+                "return=representation",
+                "return=minimal",
+                "return=none",
+                "resolution=ignore-duplicates",
+                "resolution=merge-duplicates"
+            ],
+            "in": "header",
+            "type": "string"
+        },
+        "select": {
+            "name": "select",
+            "description": "Filtering Columns",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "on_conflict": {
+            "name": "on_conflict",
+            "description": "On Conflict",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "order": {
+            "name": "order",
+            "description": "Ordering",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "range": {
+            "name": "Range",
+            "description": "Limiting and Pagination",
+            "required": false,
+            "in": "header",
+            "type": "string"
+        },
+        "rangeUnit": {
+            "name": "Range-Unit",
+            "description": "Limiting and Pagination",
+            "required": false,
+            "default": "items",
+            "in": "header",
+            "type": "string"
+        },
+        "offset": {
+            "name": "offset",
+            "description": "Limiting and Pagination",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "limit": {
+            "name": "limit",
+            "description": "Limiting and Pagination",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.rates_rider": {
+            "name": "rates_rider",
+            "description": "rates_rider",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/rates_rider"
+            }
+        },
+        "rowFilter.rates_rider.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rates_rider.rider_id": {
+            "name": "rider_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rates_rider.driver_id": {
+            "name": "driver_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rates_rider.punctuality": {
+            "name": "punctuality",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rates_rider.behavior": {
+            "name": "behavior",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rates_rider.communication": {
+            "name": "communication",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rates_rider.payment_punctuality": {
+            "name": "payment_punctuality",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rates_rider.ride_id": {
+            "name": "ride_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.payments": {
+            "name": "payments",
+            "description": "payments",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/payments"
+            }
+        },
+        "rowFilter.payments.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.payments.reservation_id": {
+            "name": "reservation_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.payments.amount": {
+            "name": "amount",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.payments.payment_method_id": {
+            "name": "payment_method_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.vehicles": {
+            "name": "vehicles",
+            "description": "vehicles",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/vehicles"
+            }
+        },
+        "rowFilter.vehicles.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.vehicles.brand": {
+            "name": "brand",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.vehicles.model": {
+            "name": "model",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.vehicles.color": {
+            "name": "color",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.vehicles.license_plate": {
+            "name": "license_plate",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.vehicles.number_slots": {
+            "name": "number_slots",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.vehicles.driver_id": {
+            "name": "driver_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.reservation_cancellations": {
+            "name": "reservation_cancellations",
+            "description": "reservation_cancellations",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/reservation_cancellations"
+            }
+        },
+        "rowFilter.reservation_cancellations.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.reservation_cancellations.reservation_id": {
+            "name": "reservation_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.reservation_cancellations.reason": {
+            "name": "reason",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.reservation_cancellations.canceled_by": {
+            "name": "canceled_by",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.payment_methods": {
+            "name": "payment_methods",
+            "description": "payment_methods",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/payment_methods"
+            }
+        },
+        "rowFilter.payment_methods.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.payment_methods.driver_id": {
+            "name": "driver_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.payment_methods.type": {
+            "name": "type",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.payment_methods.number_account": {
+            "name": "number_account",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.rates_driver": {
+            "name": "rates_driver",
+            "description": "rates_driver",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/rates_driver"
+            }
+        },
+        "rowFilter.rates_driver.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rates_driver.rider_id": {
+            "name": "rider_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rates_driver.driver_id": {
+            "name": "driver_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rates_driver.punctuality": {
+            "name": "punctuality",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rates_driver.behavior": {
+            "name": "behavior",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rates_driver.communication": {
+            "name": "communication",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rates_driver.security": {
+            "name": "security",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rates_driver.ride_id": {
+            "name": "ride_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.drivers": {
+            "name": "drivers",
+            "description": "drivers",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/drivers"
+            }
+        },
+        "rowFilter.drivers.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.drivers.cancellation_odds": {
+            "name": "cancellation_odds",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.drivers.rating": {
+            "name": "rating",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.drivers.user_id": {
+            "name": "user_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.riders": {
+            "name": "riders",
+            "description": "riders",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/riders"
+            }
+        },
+        "rowFilter.riders.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.riders.cancellation_odds": {
+            "name": "cancellation_odds",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.riders.rating": {
+            "name": "rating",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.riders.user_id": {
+            "name": "user_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.zones": {
+            "name": "zones",
+            "description": "zones",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/zones"
+            }
+        },
+        "rowFilter.zones.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.zones.name": {
+            "name": "name",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.zones.description": {
+            "name": "description",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.reservations": {
+            "name": "reservations",
+            "description": "reservations",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/reservations"
+            }
+        },
+        "rowFilter.reservations.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.reservations.ride_id": {
+            "name": "ride_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.reservations.rider_id": {
+            "name": "rider_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.reservations.meeting_point": {
+            "name": "meeting_point",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.reservations.state": {
+            "name": "state",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.reservations.on_time_rider": {
+            "name": "on_time_rider",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.reservations.on_time_driver": {
+            "name": "on_time_driver",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.reservations.destination_point": {
+            "name": "destination_point",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.ride_cancellations": {
+            "name": "ride_cancellations",
+            "description": "ride_cancellations",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/ride_cancellations"
+            }
+        },
+        "rowFilter.ride_cancellations.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.ride_cancellations.ride_id": {
+            "name": "ride_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.ride_cancellations.reason": {
+            "name": "reason",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.ride_cancellations.canceled_by": {
+            "name": "canceled_by",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.rides": {
+            "name": "rides",
+            "description": "rides",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/rides"
+            }
+        },
+        "rowFilter.rides.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rides.driver_id": {
+            "name": "driver_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rides.vehicle_id": {
+            "name": "vehicle_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rides.zone_id": {
+            "name": "zone_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rides.source": {
+            "name": "source",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rides.destination": {
+            "name": "destination",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rides.date": {
+            "name": "date",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rides.departure_time": {
+            "name": "departure_time",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rides.state": {
+            "name": "state",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.rides.type": {
+            "name": "type",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "body.users": {
+            "name": "users",
+            "description": "users",
+            "required": false,
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/users"
+            }
+        },
+        "rowFilter.users.id": {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.users.first_name": {
+            "name": "first_name",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.users.last_name": {
+            "name": "last_name",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.users.email": {
+            "name": "email",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.users.password": {
+            "name": "password",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.users.zone_id": {
+            "name": "zone_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        },
+        "rowFilter.users.auth_id": {
+            "name": "auth_id",
+            "required": false,
+            "in": "query",
+            "type": "string"
+        }
+    },
+    "externalDocs": {
+        "description": "PostgREST Documentation",
+        "url": "https://postgrest.org/en/v14/references/api.html"
+    }
+}
